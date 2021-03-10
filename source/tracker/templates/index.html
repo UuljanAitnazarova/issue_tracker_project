@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% for issue in issues %}
+        {{ issue.summary }} <br/>
+    {% endfor %}
+{% endblock content %}

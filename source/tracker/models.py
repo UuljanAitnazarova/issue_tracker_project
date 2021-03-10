@@ -3,8 +3,8 @@ from django.db import models
 class Issue(models.Model):
     summary = models.CharField(max_length=200, blank=False, null=False)
     description = models.TextField(max_length=1000, blank=True, null=True)
-    status = models.ForeignKey('tracker.Status', on_delete=models.PROTECT)
-    type = models.ForeignKey('tracker.Type', on_delete=models.PROTECT)
+    status = models.ForeignKey('tracker.Status', on_delete=models.PROTECT, related_name='issues')
+    type = models.ForeignKey('tracker.Type', on_delete=models.PROTECT, related_name='issues')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
