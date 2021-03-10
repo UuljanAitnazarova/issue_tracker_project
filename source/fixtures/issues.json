@@ -1,0 +1,116 @@
+[
+{
+  "model": "tracker.issue",
+  "pk": 1,
+  "fields": {
+    "summary": "Task #1",
+    "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum neque et quos sed corporis tenetur dolore saepe numquam asperiores aliquid eum error, voluptatem repellendus, fugit laboriosam magni, atque harum omnis.",
+    "status": 1,
+    "type": 1,
+    "created_at": "2021-03-10T10:33:00.294Z",
+    "updated_at": "2021-03-10T10:33:00.295Z"
+  }
+},
+{
+  "model": "tracker.issue",
+  "pk": 2,
+  "fields": {
+    "summary": "Bug # 1",
+    "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum neque et quos sed corporis tenetur dolore saepe numquam asperiores aliquid eum error, voluptatem repellendus, fugit laboriosam magni, atque harum omnis.",
+    "status": 2,
+    "type": 3,
+    "created_at": "2021-03-10T10:33:24.450Z",
+    "updated_at": "2021-03-10T10:33:24.450Z"
+  }
+},
+{
+  "model": "tracker.issue",
+  "pk": 3,
+  "fields": {
+    "summary": "Bug #2",
+    "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum neque et quos sed corporis tenetur dolore saepe numquam asperiores aliquid eum error, voluptatem repellendus, fugit laboriosam magni, atque harum omnis.",
+    "status": 3,
+    "type": 3,
+    "created_at": "2021-03-10T10:33:35.951Z",
+    "updated_at": "2021-03-10T10:33:43.631Z"
+  }
+},
+{
+  "model": "tracker.issue",
+  "pk": 4,
+  "fields": {
+    "summary": "Enhancement #1",
+    "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum neque et quos sed corporis tenetur dolore saepe numquam asperiores aliquid eum error, voluptatem repellendus, fugit laboriosam magni, atque harum omnis.",
+    "status": 1,
+    "type": 2,
+    "created_at": "2021-03-10T10:34:03.793Z",
+    "updated_at": "2021-03-10T10:34:03.793Z"
+  }
+},
+{
+  "model": "tracker.issue",
+  "pk": 5,
+  "fields": {
+    "summary": "Enhancement #2",
+    "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum neque et quos sed corporis tenetur dolore saepe numquam asperiores aliquid eum error, voluptatem repellendus, fugit laboriosam magni, atque harum omnis.",
+    "status": 2,
+    "type": 2,
+    "created_at": "2021-03-10T10:34:22.523Z",
+    "updated_at": "2021-03-10T10:34:22.523Z"
+  }
+},
+{
+  "model": "tracker.issue",
+  "pk": 6,
+  "fields": {
+    "summary": "Task #2",
+    "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum neque et quos sed corporis tenetur dolore saepe numquam asperiores aliquid eum error, voluptatem repellendus, fugit laboriosam magni, atque harum omnis.",
+    "status": 3,
+    "type": 1,
+    "created_at": "2021-03-10T10:34:35.841Z",
+    "updated_at": "2021-03-10T10:34:35.841Z"
+  }
+},
+{
+  "model": "tracker.status",
+  "pk": 1,
+  "fields": {
+    "name": "New"
+  }
+},
+{
+  "model": "tracker.status",
+  "pk": 2,
+  "fields": {
+    "name": "In Progress"
+  }
+},
+{
+  "model": "tracker.status",
+  "pk": 3,
+  "fields": {
+    "name": "Done"
+  }
+},
+{
+  "model": "tracker.type",
+  "pk": 1,
+  "fields": {
+    "name": "Task"
+  }
+},
+{
+  "model": "tracker.type",
+  "pk": 2,
+  "fields": {
+    "name": "Enhancement"
+  }
+},
+{
+  "model": "tracker.type",
+  "pk": 3,
+  "fields": {
+    "name": "Bug"
+  }
+}
+]
