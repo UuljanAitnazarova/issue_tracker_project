@@ -1,3 +1,7 @@
 from django.contrib import admin
 
-# Register your models here.
+from tracker.models import Issue, Status, Type
+
+admin.site.register(Issue)
+admin.site.register(Status)
+admin.site.register(Type)
