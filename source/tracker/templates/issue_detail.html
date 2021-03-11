@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
-    <div class="card text-center" style="background-color: #0723D7; margin-top: 40px; color: azure">
+    <div class="w-75 mx-auto card text-center" style="background-color: #0723D7; margin-top: 40px; color: azure">
       <div class="card-body">
         <h2 class="card-title">{{ issue.summary }}</h2>
         <p class="card-text">{{ issue.description }}</p>
           <p class="card-text">Status: {{ issue.status  }}</p>
           <p class="card-text">Type: {{ issue.type  }}</p>
-          <span><a href="#" class="btn btn-primary">Edit</a> <a href="#" class="btn btn-primary">Delete</a></span>
+          <span><a href="{% url 'update_issue' issue.id %}" class="btn btn-primary">Update</a> <a href="{% url 'delete_issue' issue.id %}" class="btn btn-primary">Delete</a></span>
       </div>
     </div>
 {% endblock content %}

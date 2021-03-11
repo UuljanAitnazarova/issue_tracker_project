@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+
+
+{% block content %}
+
+<form action="{% url 'create_issue' %}" method="post">
+    {% csrf_token %}
+{#    {{ form|crispy }}#}
+        {% include 'issue_form.html' with button_text='Add' %}
+    </div>
+</form>
+
+{% endblock content %}

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{%  block content %}
+{#     {{ form|crispy }}#}
+    <form action="{% url 'update_issue' issue.id %}" method='post'>
+        {% include 'issue_form.html' with button_text='Update' %}
+    </form>
+{% endblock content %}

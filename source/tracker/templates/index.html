@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
     {% for issue in issues %}
-        <div class="w-50 card text-center border-0" style="margin-top: 40px; background-color: #0723D7; color: azure" >
+        <div class="w-50 mx-auto card text-center border-0" style="margin-top: 40px; background-color: #0723D7; color: azure" >
           <div class="card-body">
               <h5>Issue: {{ issue.summary }} </h5><br/>
               <p>Status: {{ issue.status }}</p>
