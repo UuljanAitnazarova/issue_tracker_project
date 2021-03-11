@@ -1,6 +1,16 @@
 {% extends 'base.html' %}
 {% block content %}
     {% for issue in issues %}
-        {{ issue.summary }} <br/>
-    {% endfor %}
+        <div class="w-50 card text-center border-0" style="margin-top: 40px; background-color: #0723D7; color: azure" >
+          <div class="card-body">
+              <h5>Issue: {{ issue.summary }} </h5><br/>
+              <p>Status: {{ issue.status }}</p>
+              <p>Type: {{ issue.type }}</p>
+              <a href="{% url 'detail_view' issue.id %}" class="btn btn-primary" style="background-color: navy; border: none; color: goldenrod">View details</a>
+          </div>
+        </div>
+     {% endfor %}
+    <div style="color: aliceblue">
+        <footer>Created by Uulzhan Aitnazarova</footer>
+    </div>
 {% endblock content %}
