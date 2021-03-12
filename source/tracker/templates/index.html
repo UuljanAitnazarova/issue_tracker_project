@@ -3,9 +3,11 @@
     {% for issue in issues %}
         <div class="w-50 mx-auto card text-center border-0" style="margin-top: 40px; background-color: #0723D7; color: azure" >
           <div class="card-body">
-              <h5>Issue: {{ issue.summary }} </h5><br/>
+              <h5>ISSUE: {{ issue.summary|upper }} </h5><br/>
               <p>Status: {{ issue.status }}</p>
-              <p>Type: {{ issue.type }}</p>
+              {% for type in issue.type.all %}
+              <p>Type: {{ type }}</p>
+              {% endfor %}
               <a href="{% url 'detail_view' issue.id %}" class="btn btn-primary" style="background-color: navy; border: none; color: goldenrod">View details</a>
           </div>
         </div>

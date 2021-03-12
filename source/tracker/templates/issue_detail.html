@@ -5,7 +5,9 @@
         <h2 class="card-title">{{ issue.summary }}</h2>
         <p class="card-text">{{ issue.description }}</p>
           <p class="card-text">Status: {{ issue.status  }}</p>
-          <p class="card-text">Type: {{ issue.type  }}</p>
+          {% for type in issue.type.all %}
+          <p class="card-text">Type: {{ type  }}</p>
+          {% endfor %}
           <span><a href="{% url 'update_issue' issue.id %}" class="btn btn-primary">Update</a> <a href="{% url 'delete_issue' issue.id %}" class="btn btn-primary">Delete</a></span>
       </div>
     </div>
