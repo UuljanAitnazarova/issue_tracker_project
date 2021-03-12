@@ -5,9 +5,7 @@
           <div class="card-body">
               <h5>ISSUE: {{ issue.summary|upper }} </h5><br/>
               <p>Status: {{ issue.status }}</p>
-              {% for type in issue.type.all %}
-              <p>Type: {{ type }}</p>
-              {% endfor %}
+              <p>Types: {% for type in issue.type.all %}{{ type }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
               <a href="{% url 'detail_view' issue.id %}" class="btn btn-primary" style="background-color: navy; border: none; color: goldenrod">View details</a>
           </div>
         </div>
