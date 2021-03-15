@@ -52,7 +52,7 @@ class IssueUpdateView(View):
         form = IssueForm(initial={
             'summary': issue.summary,
             'description': issue.description,
-            'typ': issue.type,
+            'type': issue.type.all(),
             'status': issue.status,
         })
         return render(request, 'issue_update.html', context={'form': form, 'issue': issue})
