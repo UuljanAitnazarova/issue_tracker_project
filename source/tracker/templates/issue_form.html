@@ -7,7 +7,7 @@
 {% for field in form %}
    <p><label for="{{ field.id_for_label }}">{{ field.label }}</label></p>
    {% for error in field.errors %}
-       <p class="form-error">{{ error }}</p>
+       <p style="color: darkred">{{ error }}</p>
    {% endfor %}
    <p {% if field.errors %} class="form-field-error"{% endif %}>{{ field }}</p>
     <br>

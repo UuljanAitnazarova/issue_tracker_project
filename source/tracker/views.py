@@ -19,6 +19,7 @@ class IndexView(TemplateView):
 class IssueDetailView(TemplateView):
     template_name = 'issue_detail.html'
 
+
     def get_context_data(self, **kwargs):
         print(kwargs)
         context = super().get_context_data(**kwargs)

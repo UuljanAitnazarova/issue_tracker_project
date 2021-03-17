@@ -1,8 +1,11 @@
 from django.db import models
 
+from tracker.validators import validate_integers, SpecialSymbolsValidator
+
+
 class Issue(models.Model):
-    summary = models.CharField(max_length=200, blank=False, null=False)
-    description = models.TextField(max_length=1000, blank=True, null=True)
+    summary = models.CharField(max_length=200, blank=False, null=False, validators=[validate_integers])
+    description = models.TextField(max_length=1000, blank=True, null=True, validators=[SpecialSymbolsValidator(['@', '#', '$', '&', '%'])])
     status = models.ForeignKey('tracker.Status', on_delete=models.PROTECT, related_name='issues')
     type = models.ManyToManyField('tracker.Type', related_name='issues')
     created_at = models.DateTimeField(auto_now_add=True)
