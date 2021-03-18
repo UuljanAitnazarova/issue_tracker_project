@@ -20,8 +20,10 @@ class SpecialSymbolsValidator(BaseValidator):
 
     def compare(self, a, b):
         for symbol in a:
-            flag = symbol in b
-        return flag
+            if symbol in b:
+                return True
+        return False
+
 
 
 
