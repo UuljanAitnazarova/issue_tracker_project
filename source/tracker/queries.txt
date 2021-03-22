@@ -1,0 +1,14 @@
+# 1
+Issue.objects.filter(updated_at__gt=date.today() - timedelta(days=30), status__name='Done')
+
+# 2
+Issue.objects.filter(status__name__in=['New','In Progress'], type__name__in=['Task','Bug'])
+
+# 3
+Issue.objects.filter(Q(summary__icontains='bug') | Q(type__name='Bug'), Q(status__name__in=['New', 'In Progress']))
+
+
+# Additional queries
+Issue.objects.values_list('id', 'summary', 'type', 'status')
+Issue.objects.filter(summary__exact=F('description'))
+
