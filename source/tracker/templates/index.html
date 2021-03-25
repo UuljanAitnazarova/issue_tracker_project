@@ -1,5 +1,11 @@
 {% extends 'base.html' %}
+
 {% block content %}
+    {% if not issues %}
+        <h2>No issues</h2>
+    {% else %}
+        {% include "partial/search_form.html" %}
+    {% endif %}
     {% for issue in issues %}
         <div class="w-50 mx-auto card text-center border-0" style="margin-top: 40px; background-color: #0723D7; color: azure" >
           <div class="card-body">
@@ -10,6 +16,9 @@
           </div>
         </div>
      {% endfor %}
+    <br/>
+    {% include 'partial/pagination.html' %}
+
     <div style="color: darkblue">
         <footer>Created by Uulzhan Aitnazarova</footer>
     </div>

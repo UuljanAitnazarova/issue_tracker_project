@@ -1,19 +1,58 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.template.defaultfilters import urlencode
 from django.views.generic.base import TemplateView
+from django.views.generic import ListView
 from django.views import View
+from django.db.models import Q
 
 from tracker.models import Issue, Status, Type
-from tracker.forms import IssueForm
+from tracker.forms import IssueForm, SearchForm
 
 
-class IndexView(TemplateView):
+class IndexView(ListView):
     template_name = 'index.html'
+    model = Issue
+    context_object_name = 'issues'
+    ordering = ('summary', '-created_at')
+    paginate_by = 2
+    paginate_orphans = 1
+
+    def get(self, request, **kwargs):
+        self.form = SearchForm(request.GET)
+        self.search_data = self.get_search_data()
+        return super(IndexView, self).get(request, **kwargs)
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+
+        if self.search_data:
+            queryset = queryset.filter(
+                Q(summary__icontains=self.search_data) |
+                Q(description__icontains=self.search_data)
+            )
+        return queryset
+
+    def get_search_data(self):
+        if self.form.is_valid():
+            return self.form.cleaned_data['search_value']
+        return None
+
 
     def get_context_data(self, **kwargs):
-        print(kwargs)
         context = super().get_context_data(**kwargs)
-        context['issues'] = Issue.objects.all()
+        context['search_form'] = self.form
         return context
+
+
+
+
+
+
+
+
+
+
+
 
 
 class IssueDetailView(TemplateView):
