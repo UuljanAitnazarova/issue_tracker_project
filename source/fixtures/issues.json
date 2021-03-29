@@ -7,8 +7,10 @@
     "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum neque et quos sed corporis tenetur dolore saepe numquam asperiores aliquid eum error, voluptatem repellendus, fugit laboriosam magni, atque harum omnis.",
     "status": 2,
     "created_at": "2021-03-10T10:33:24.450Z",
-    "updated_at": "2021-03-22T10:18:56.682Z",
+    "updated_at": "2021-03-29T10:46:49.857Z",
+    "project": 1,
     "type": [
+      2,
       3
     ]
   }
@@ -22,6 +24,7 @@
     "status": 3,
     "created_at": "2021-03-10T10:33:35.951Z",
     "updated_at": "2021-03-22T10:18:53.401Z",
+    "project": 1,
     "type": [
       3
     ]
@@ -35,7 +38,8 @@
     "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum neque et quos sed corporis tenetur dolore saepe numquam asperiores aliquid eum error, voluptatem repellendus, fugit laboriosam magni, atque harum omnis.",
     "status": 1,
     "created_at": "2021-03-10T10:34:03.793Z",
-    "updated_at": "2021-03-22T10:18:46.759Z",
+    "updated_at": "2021-03-22T10:50:38.569Z",
+    "project": 1,
     "type": [
       2,
       3
@@ -50,7 +54,8 @@
     "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum neque et quos sed corporis tenetur dolore saepe numquam asperiores aliquid eum error, voluptatem repellendus, fugit laboriosam magni, atque harum omnis.",
     "status": 2,
     "created_at": "2021-03-10T10:34:22.523Z",
-    "updated_at": "2021-03-22T10:18:50.443Z",
+    "updated_at": "2021-03-22T10:50:19.086Z",
+    "project": 1,
     "type": [
       1,
       2
@@ -65,7 +70,8 @@
     "description": "Enhancement 3",
     "status": 1,
     "created_at": "2021-03-20T17:11:51.440Z",
-    "updated_at": "2021-03-22T10:20:13.970Z",
+    "updated_at": "2021-03-22T10:22:45.301Z",
+    "project": 1,
     "type": [
       2
     ]
@@ -79,7 +85,8 @@
     "description": "Task 1",
     "status": 1,
     "created_at": "2021-03-22T10:18:16.573Z",
-    "updated_at": "2021-03-22T10:18:16.573Z",
+    "updated_at": "2021-03-22T10:50:50.120Z",
+    "project": 1,
     "type": [
       1
     ]
@@ -93,9 +100,25 @@
     "description": "Task 2",
     "status": 2,
     "created_at": "2021-03-22T10:18:33.929Z",
-    "updated_at": "2021-03-22T10:19:50.131Z",
+    "updated_at": "2021-03-22T10:50:55.333Z",
+    "project": 1,
     "type": [
       1
+    ]
+  }
+},
+{
+  "model": "tracker.issue",
+  "pk": 32,
+  "fields": {
+    "summary": "Bug 4",
+    "description": "bug 4",
+    "status": 3,
+    "created_at": "2021-03-22T10:55:02.808Z",
+    "updated_at": "2021-03-22T10:55:02.808Z",
+    "project": 1,
+    "type": [
+      3
     ]
   }
 },
@@ -139,6 +162,16 @@
   "pk": 3,
   "fields": {
     "name": "Bug"
+  }
+},
+{
+  "model": "tracker.project",
+  "pk": 1,
+  "fields": {
+    "name": "First Project",
+    "description": "This is the first project. Good luck!",
+    "start_date": "2021-03-29",
+    "end_date": null
   }
 }
 ]

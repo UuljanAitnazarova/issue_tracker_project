@@ -3,5 +3,12 @@ from tracker.views.issues import (
                                 IssueDetailView,
                                 IssueCreateView,
                                 IssueUpdateView,
-                                IssueDeleteView
+                                IssueDeleteView,
                                 )
+
+from tracker.views.projects import (
+                                MainView,
+                                ProjectDetailView,
+                                ProjectCreateView,
+)
+

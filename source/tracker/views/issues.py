@@ -1,16 +1,18 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.template.defaultfilters import urlencode
+from django.urls import reverse
 from django.views.generic.base import TemplateView
-from django.views.generic import ListView
+from django.views.generic import ListView, CreateView
 from django.views import View
 from django.db.models import Q
 
-from tracker.models import Issue, Status, Type
+
+from tracker.models import Issue, Status, Type, Project
 from tracker.forms import IssueForm, SearchForm
 
 
 class IndexView(ListView):
-    template_name = 'index.html'
+    template_name = 'issue/index.html'
     model = Issue
     context_object_name = 'issues'
     ordering = ('summary', '-created_at')
@@ -44,19 +46,8 @@ class IndexView(ListView):
         return context
 
 
-
-
-
-
-
-
-
-
-
-
-
 class IssueDetailView(TemplateView):
-    template_name = 'issue_detail.html'
+    template_name = 'issue/detail.html'
 
 
     def get_context_data(self, **kwargs):
@@ -68,21 +59,20 @@ class IssueDetailView(TemplateView):
         return context
 
 
-class IssueCreateView(View):
+class IssueCreateView(CreateView):
+    model = Issue
+    template_name = 'issue/create.html'
+    form_class = IssueForm
 
-    def get(self, request, *args, **kwargs):
-        form = IssueForm()
-        return render(request, 'issue_create.html', context={'form': form})
+    def form_valid(self, form):
+        project = get_object_or_404(Project, pk=self.kwargs.get('pk'))
+        issue = form.save(commit=False)
+        issue.project = project
+        issue.save()
+        form.save_m2m()
+        return redirect(reverse('detail_view', kwargs={'issue_pk': issue.pk}))
 
-    def post(self, request, *args, **kwargs):
-        form = IssueForm(data=request.POST)
 
-        if form.is_valid():
-            type = form.cleaned_data.pop('type')
-            issue = Issue.objects.create(**form.cleaned_data)
-            issue.type.set(type)
-            return redirect('detail_view', issue_pk=issue.pk)
-        return render(request, 'issue_create.html', context={'form': form})
 
 
 class IssueUpdateView(View):
@@ -95,7 +85,7 @@ class IssueUpdateView(View):
             'type': issue.type.all(),
             'status': issue.status,
         })
-        return render(request, 'issue_update.html', context={'form': form, 'issue': issue})
+        return render(request, 'issue/update.html', context={'form': form, 'issue': issue})
 
     def post(self, request, *args, **kwargs):
         issue = get_object_or_404(Issue, id=kwargs.get('issue_pk'))
@@ -107,14 +97,14 @@ class IssueUpdateView(View):
             issue.status = form.cleaned_data.get('status')
             issue.save()
             return redirect('detail_view', issue_pk=issue.pk)
-        return render(request, 'issue_update.html', context={'form': form, 'issue': issue})
+        return render(request, 'issue/issue_update.html', context={'form': form, 'issue': issue})
 
 
 class IssueDeleteView(View):
 
     def get(self, request, *args, **kwargs):
         issue = get_object_or_404(Issue, id=kwargs.get('issue_pk'))
-        return render(request, 'issue_delete.html', context={'issue': issue})
+        return render(request, 'issue/delete.html', context={'issue': issue})
 
     def post(self, request, *args, **kwargs):
         issue = get_object_or_404(Issue, id=kwargs.get('issue_pk'))

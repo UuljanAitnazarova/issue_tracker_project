@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block nav %}
+<li class="nav-item">
+  <a class="nav-link active" aria-current="page" href="{% url 'create_project' %}">Add New Project</a>
+</li>
+    <li class="nav-item">
+  <a class="nav-link active" aria-current="page" href="{% url 'create_issue' project.pk %}">Add new issue</a>
+</li>
+{% endblock nav %}
+
+
+{% block content %}
+    <h3>Title: {{ project.name }}</h3>
+    <p>Description: {{ project.description }}</p>
+    <p>Start Date: {{ project.start_date }}</p>
+    <p>End Date: {{ project.end_date }}</p>
+
+
+    <h2>Issues:</h2>
+    {% for issue in project.issues.all %}
+        <p>{{ issue.summary }}: {{ issue.description }}</p>
+    {% empty %}
+        <p>No issues for this project</p>
+    {% endfor %}
+{% endblock %}

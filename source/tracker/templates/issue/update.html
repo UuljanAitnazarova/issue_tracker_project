@@ -5,6 +5,6 @@
 {%  block content %}
 {#     {{ form|crispy }}#}
     <form action="{% url 'update_issue' issue.id %}" method='post'>
-        {% include 'issue_form.html' with button_text='Update' %}
+        {% include 'issue/issue_form.html' with button_text='Update' %}
     </form>
 {% endblock content %}

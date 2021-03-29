@@ -10,6 +10,7 @@ class Issue(models.Model):
     type = models.ManyToManyField('tracker.Type', related_name='issues')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    project = models.ForeignKey('tracker.Project', related_name='issues', on_delete=models.CASCADE)
 
     def __str__(self):
         return self.summary
@@ -36,4 +37,4 @@ class Project(models.Model):
     end_date = models.DateField(blank=True, null=True)
 
     def __str__(self):
-        return self.description
+        return f'{self.pk},{self.description}'
