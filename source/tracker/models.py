@@ -27,3 +27,13 @@ class Type(models.Model):
     def __str__(self):
         return self.name
 
+
+
+class Project(models.Model):
+    name = models.CharField(max_length=300, blank=False, null=False)
+    description = models.TextField(max_length=1000, blank=False, null=False)
+    start_date = models.DateField(blank=False, null=False)
+    end_date = models.DateField(blank=True, null=True)
+
+    def __str__(self):
+        return self.description
