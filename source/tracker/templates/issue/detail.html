@@ -1,4 +1,11 @@
 {% extends 'base.html' %}
+{% block nav %}
+    <li class="nav-item">
+  <a class="nav-link active" aria-current="page" href="{% url 'detail_project' issue.project.pk %}">Go to Project</a>
+</li>
+{% endblock %}
+
+
 {% block content %}
     <div class="w-75 mx-auto card text-center" style="background-color: #0723D7; margin-top: 40px; color: azure">
       <div class="card-body">

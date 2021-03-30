@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form action="" method='post'>
+    {% csrf_token %}
+    <div class="card text-center" style="margin-top: 40px; background-color: darkmagenta; color: white;">
+        <div class="card-body">
+          <h5 class="card-title">Are you sure that you want to delete this project?</h5>
+          <input class="btn" type="submit" value="Delete" style="background-color: #A6ACAF; color: white;">
+          <a class='btn' href="{% url 'index_view' %}" style="color: white; background-color: #A6ACAF; ">Cancel</a>
+        </div>
+      </div>
+
+</form>
+
+{% endblock content %}

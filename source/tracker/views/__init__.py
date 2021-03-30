@@ -10,5 +10,7 @@ from tracker.views.projects import (
                                 MainView,
                                 ProjectDetailView,
                                 ProjectCreateView,
+                                ProjectUpdateView,
+                                ProjectDeleteView,
 )
 
