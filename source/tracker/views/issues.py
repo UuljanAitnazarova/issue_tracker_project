@@ -10,7 +10,8 @@ from tracker.forms import IssueForm, SearchForm
 
 class IndexView(ListView):
     template_name = 'issue/index.html'
-    model = Issue
+    # model = Issue
+    queryset = Issue.objects.all()
     context_object_name = 'issues'
     ordering = ('summary', '-created_at')
     paginate_by = 2

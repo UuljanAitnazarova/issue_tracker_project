@@ -1,5 +1,5 @@
-<div class="pagination">
-    <span class="step-links">
+<div class="pagination mx-auto">
+    <span class="step-links mx-auto">
         {% if page_obj.has_previous %}
             <a href="?{% if query %}{{ query }}&{% endif %}page=1">&laquo; Beginning</a>
             <a href="?{% if query %}{{ query }}&{% endif %}page={{ page_obj.previous_page_number }}">Back</a>
