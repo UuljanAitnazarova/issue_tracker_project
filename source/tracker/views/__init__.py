@@ -8,7 +8,7 @@ from tracker.views.issues import (
 
 from tracker.views.projects import (
                                 MainView,
-                                ProjectDetailView,
+                                ProjectIssuesView,
                                 ProjectCreateView,
                                 ProjectUpdateView,
                                 ProjectDeleteView,

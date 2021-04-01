@@ -7,16 +7,16 @@ from tracker.views import (
                 IssueUpdateView,
                 IssueDeleteView,
                 MainView,
-                ProjectDetailView,
                 ProjectCreateView,
                 ProjectUpdateView,
                 ProjectDeleteView,
+                ProjectIssuesView,
 )
 
 
 urlpatterns = [
     path('', MainView.as_view(), name='main_page'),
-    path('<int:project_pk>/', ProjectDetailView.as_view(), name='detail_project'),
+    path('<int:project_pk>/', ProjectIssuesView.as_view(), name='detail_project'),
     path('<int:project_pk>/update', ProjectUpdateView.as_view(), name='update_project'),
     path('<int:project_pk>/delete', ProjectDeleteView.as_view(), name='delete_project'),
     path('create/', ProjectCreateView.as_view(), name='create_project'),

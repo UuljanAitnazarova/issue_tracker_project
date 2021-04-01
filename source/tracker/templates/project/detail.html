@@ -21,7 +21,7 @@
 
 
     <h2>Issues:</h2>
-    {% for issue in project.issues.all %}
+    {% for issue in issues %}
                 <div class="w-50 mx-auto card text-center border-0" style="margin-top: 40px; background-color: #0723D7; color: azure" >
           <div class="card-body">
               <h5>ISSUE: {{ issue.summary|upper }} </h5><br/>
@@ -32,6 +32,8 @@
         </div>
     {% endfor %}
 
-
+        {% if is_paginated %}
+        {% include 'partial/pagination.html' %}
+    {% endif %}
 
 {% endblock %}

@@ -1,8 +1,10 @@
+from django.shortcuts import get_object_or_404
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.urls import reverse
 
 from tracker.models import Project, Issue
 from tracker.forms import ProjectForm
+
 
 class MainView(ListView):
     template_name = 'project/mainpage.html'
@@ -12,19 +14,26 @@ class MainView(ListView):
     paginate_orphans = 1
 
 
-class ProjectDetailView(DetailView):
-    model = Project
+class ProjectIssuesView(ListView):
     template_name = 'project/detail.html'
-    pk_url_kwarg = 'project_pk'
+    paginate_by = 2
+    paginate_orphans = 1
+    context_object_name = 'issues'
 
-# class ProjectIssuesView
+    def get_queryset(self):
+        self.project = get_object_or_404(Project, pk=self.kwargs['project_pk'])
+        return Issue.objects.filter(project=self.project)
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['project'] = self.project
+        return context
 
 
 class ProjectCreateView(CreateView):
     template_name = 'project/create.html'
     form_class = ProjectForm
     model = Project
-
 
 
     def get_success_url(self):
