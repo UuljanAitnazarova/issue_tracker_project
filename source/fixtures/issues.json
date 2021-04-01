@@ -112,11 +112,102 @@
   "pk": 32,
   "fields": {
     "summary": "Bug 4",
-    "description": "bug 4",
+    "description": "bug 4 444",
     "status": 3,
     "created_at": "2021-03-22T10:55:02.808Z",
-    "updated_at": "2021-03-22T10:55:02.808Z",
+    "updated_at": "2021-03-30T13:31:32.905Z",
     "project": 1,
+    "type": [
+      3
+    ]
+  }
+},
+{
+  "model": "tracker.issue",
+  "pk": 38,
+  "fields": {
+    "summary": "Task 1",
+    "description": "vhjbknlj",
+    "status": 2,
+    "created_at": "2021-03-30T14:02:38.817Z",
+    "updated_at": "2021-03-30T14:02:38.817Z",
+    "project": 2,
+    "type": [
+      1
+    ]
+  }
+},
+{
+  "model": "tracker.issue",
+  "pk": 39,
+  "fields": {
+    "summary": "Bug 2",
+    "description": "vhbjnk",
+    "status": 1,
+    "created_at": "2021-03-30T14:04:28.836Z",
+    "updated_at": "2021-03-30T14:04:28.836Z",
+    "project": 2,
+    "type": [
+      2,
+      3
+    ]
+  }
+},
+{
+  "model": "tracker.issue",
+  "pk": 40,
+  "fields": {
+    "summary": "ng",
+    "description": "gvuhijo",
+    "status": 1,
+    "created_at": "2021-03-30T14:07:02.459Z",
+    "updated_at": "2021-03-30T14:07:02.459Z",
+    "project": 2,
+    "type": [
+      3
+    ]
+  }
+},
+{
+  "model": "tracker.issue",
+  "pk": 41,
+  "fields": {
+    "summary": "Coding",
+    "description": "bvh",
+    "status": 1,
+    "created_at": "2021-03-30T14:11:27.504Z",
+    "updated_at": "2021-03-30T14:11:27.504Z",
+    "project": 2,
+    "type": [
+      3
+    ]
+  }
+},
+{
+  "model": "tracker.issue",
+  "pk": 44,
+  "fields": {
+    "summary": "Task 1",
+    "description": "task 1",
+    "status": 1,
+    "created_at": "2021-04-01T11:18:19.796Z",
+    "updated_at": "2021-04-01T11:18:22.231Z",
+    "project": 6,
+    "type": [
+      1
+    ]
+  }
+},
+{
+  "model": "tracker.issue",
+  "pk": 45,
+  "fields": {
+    "summary": "Bug 1",
+    "description": "bud 1",
+    "status": 2,
+    "created_at": "2021-04-01T11:18:36.736Z",
+    "updated_at": "2021-04-01T11:18:36.736Z",
+    "project": 6,
     "type": [
       3
     ]
@@ -172,6 +263,36 @@
     "description": "This is the first project. Good luck!",
     "start_date": "2021-03-29",
     "end_date": null
+  }
+},
+{
+  "model": "tracker.project",
+  "pk": 2,
+  "fields": {
+    "name": "Project 2",
+    "description": "hgvjbk",
+    "start_date": "2021-03-29",
+    "end_date": null
+  }
+},
+{
+  "model": "tracker.project",
+  "pk": 5,
+  "fields": {
+    "name": "Project 3",
+    "description": "fchgvjkl",
+    "start_date": "2021-03-12",
+    "end_date": null
+  }
+},
+{
+  "model": "tracker.project",
+  "pk": 6,
+  "fields": {
+    "name": "Project 4",
+    "description": "project 4",
+    "start_date": "2021-03-08",
+    "end_date": "2021-04-09"
   }
 }
 ]
