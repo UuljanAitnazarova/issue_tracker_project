@@ -1,6 +1,7 @@
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, redirect
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.urls import reverse
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 from tracker.models import Project, Issue
 from tracker.forms import ProjectForm
@@ -30,7 +31,7 @@ class ProjectIssuesView(ListView):
         return context
 
 
-class ProjectCreateView(CreateView):
+class ProjectCreateView(LoginRequiredMixin, CreateView):
     template_name = 'project/create.html'
     form_class = ProjectForm
     model = Project
@@ -40,7 +41,7 @@ class ProjectCreateView(CreateView):
         return reverse('main_page')
 
 
-class ProjectUpdateView(UpdateView):
+class ProjectUpdateView(LoginRequiredMixin, UpdateView):
     model = Project
     template_name = 'project/update.html'
     form_class = ProjectForm
@@ -51,7 +52,7 @@ class ProjectUpdateView(UpdateView):
         return reverse('detail_project', kwargs={'project_pk': self.object.pk})
 
 
-class ProjectDeleteView(DeleteView):
+class ProjectDeleteView(LoginRequiredMixin, DeleteView):
     model = Project
     template_name = 'project/delete.html'
     pk_url_kwarg = 'project_pk'

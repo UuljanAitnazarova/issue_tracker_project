@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse
 from django.views.generic import ListView, CreateView, DetailView, UpdateView, DeleteView
 from django.db.models import Q
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 from tracker.models import Issue, Status, Type, Project
@@ -49,7 +50,7 @@ class IssueDetailView(DetailView):
     pk_url_kwarg = 'issue_pk'
 
 
-class IssueCreateView(CreateView):
+class IssueCreateView(LoginRequiredMixin, CreateView):
     model = Issue
     template_name = 'issue/create.html'
     form_class = IssueForm
@@ -65,7 +66,7 @@ class IssueCreateView(CreateView):
 
 
 
-class IssueUpdateView(UpdateView):
+class IssueUpdateView(LoginRequiredMixin, UpdateView):
     model = Issue
     template_name = 'issue/update.html'
     form_class = IssueForm
@@ -77,7 +78,7 @@ class IssueUpdateView(UpdateView):
 
 
 
-class IssueDeleteView(DeleteView):
+class IssueDeleteView(LoginRequiredMixin, DeleteView):
     model = Issue
     template_name = 'issue/delete.html'
     context_object_name = 'issue'

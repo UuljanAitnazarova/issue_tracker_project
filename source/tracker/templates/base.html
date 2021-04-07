@@ -18,7 +18,12 @@
             <a class="navbar-brand" href="{% url 'main_page' %}">Home</a>
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav">
-                  {% block nav %} {% endblock nav %}
+              {% if user.is_authenticated %}
+                   {% block nav %} {% endblock nav %}
+                   <li class="menu-right"><a href="{% url 'logout' %}" class="nav-link">Logout</a></li>
+               {% else %}
+                   <li class="menu-right"><a href="{% url 'login' %}" class="nav-link">Login</a></li>
+              {% endif %}
               </ul>
             </div>
           </div>
@@ -28,7 +33,8 @@
 
     <div class="search">
           <div class="container">
-            {% block content %} {% endblock content %}
+            {% block content %}
+            {% endblock content %}
           </div>
     </div>
 
