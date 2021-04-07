@@ -14,13 +14,17 @@
 
 
 {% block content %}
-    <h3>Title: {{ project.name }}</h3>
-    <p>Description: {{ project.description }}</p>
-    <p>Start Date: {{ project.start_date }}</p>
-    <p>End Date: {{ project.end_date }}</p>
+    <div style="text-align: center">
+        <h3>Title: {{ project.name }}</h3>
+        <p>Description: {{ project.description }}</p>
+        <p>Start Date: {{ project.start_date }}</p>
+        <p>End Date: {{ project.end_date }}</p>
+        <h2>Issues:</h2>
+    </div>
 
 
-    <h2>Issues:</h2>
+
+
     {% for issue in issues %}
                 <div class="w-50 mx-auto card text-center border-0" style="margin-top: 40px; background-color: #0723D7; color: azure" >
           <div class="card-body">

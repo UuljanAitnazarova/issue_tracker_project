@@ -13,7 +13,7 @@
     {% for project in projects %}
         <div class="w-50 mx-auto card text-center border-0" style="margin-top: 40px; background-color: darkmagenta; color: azure" >
           <div class="card-body">
-              <a href="{% url 'detail_project' project.pk %}"><h5>PROJECT: {{ project.name|upper }}</h5> </a><br/>
+              <a href="{% url 'detail_project' project.pk %}" style="color: azure; text-decoration: none"><h5>PROJECT: {{ project.name|upper }}</h5> </a><br/>
               <p>Description: {{ project.description }}</p>
           </div>
         </div>
