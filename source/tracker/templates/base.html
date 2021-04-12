@@ -20,9 +20,10 @@
               <ul class="navbar-nav">
               {% if user.is_authenticated %}
                    {% block nav %} {% endblock nav %}
-                   <li class="menu-right"><a href="{% url 'logout' %}" class="nav-link">Logout</a></li>
+                   <li class="menu-right"><a href="{% url 'accounts:logout' %}?next={{ request.get_full_path }}" class="nav-link">Logout</a></li>
                {% else %}
-                   <li class="menu-right"><a href="{% url 'login' %}" class="nav-link">Login</a></li>
+                   <li class="menu-right"><a href="{% url 'accounts:login' %}?next={{ request.get_full_path }}" class="nav-link">Login</a></li>
+                  <li class="menu-right"><a href="{% url 'accounts:registration' %}?next={{ request.get_full_path }}" class="nav-link">Sign Up</a></li>
               {% endif %}
               </ul>
             </div>

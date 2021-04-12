@@ -14,7 +14,7 @@
 <div class="row">
     <div class="w-50 mx-auto">
         <h1>Login</h1>
-        <form action="{% url 'login' %}" method="post" class="text-center">
+        <form action="" method="post" class="text-center">
         {% csrf_token %}
         {% if has_error %}
             <p class="form-error">Incorrect username or password</p>

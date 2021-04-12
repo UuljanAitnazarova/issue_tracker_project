@@ -14,3 +14,4 @@ from tracker.views.projects import (
                                 ProjectDeleteView,
 )
 
+from accounts.views import RegisterView
