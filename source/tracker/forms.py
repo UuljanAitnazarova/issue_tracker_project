@@ -30,6 +30,6 @@ class MyUserCreationForm(UserCreationForm):
 
     def clean(self):
         super(MyUserCreationForm, self).clean()
-        if not self.cleaned_data.get('first_name') or self.cleaned_data.get('last_name'):
+        if not self.cleaned_data.get('first_name') and not self.cleaned_data.get('last_name'):
             raise ValidationError('First name or last name should be registered.')
 
