@@ -12,6 +12,7 @@ from tracker.views.projects import (
                                 ProjectCreateView,
                                 ProjectUpdateView,
                                 ProjectDeleteView,
+                                ProjectUsersUpdateView,
 )
 
-from accounts.views import RegisterView
+

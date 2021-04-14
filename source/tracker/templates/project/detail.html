@@ -1,14 +1,21 @@
 {% extends 'base.html' %}
 {% block nav %}
-    <li class="nav-item">
-  <a class="nav-link active" aria-current="page" href="{% url 'update_project' project.pk %}">Update Project</a>
-</li>
+    {% if perms.tracker.change_project %}
         <li class="nav-item">
-  <a class="nav-link active" aria-current="page" href="{% url 'delete_project' project.pk %}">Delete Project</a>
-</li>
-    <li class="nav-item">
-  <a class="nav-link active" aria-current="page" href="{% url 'create_issue' project.pk %}">Add new issue</a>
-</li>
+            <a class="nav-link active" aria-current="page" href="{% url 'update_project' project.pk %}">Update Project</a>
+        </li>
+    {% endif %}
+    {% if perms.tracker.delete_project %}
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'delete_project' project.pk %}">Delete Project</a>
+        </li>
+    {% endif %}
+    {% if perms.tracker.add_issue and request.user in project.user.all%}
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'create_issue' project.pk %}">Add new issue</a>
+        </li>
+    {% endif %}
+
 
 {% endblock nav %}
 
@@ -19,12 +26,18 @@
         <p>Description: {{ project.description }}</p>
         <p>Start Date: {{ project.start_date }}</p>
         <p>End Date: {{ project.end_date }}</p>
-        <h2>Issues:</h2>
+    </div>
+
+    <div style="text-align: center">
+        <h5>Users</h5>
+        {% for user in project.user.all %}
+            <p>{{ user.username }}</p>
+        {% endfor %}
     </div>
 
 
 
-
+    <h2>Issues:</h2>
     {% for issue in issues %}
                 <div class="w-50 mx-auto card text-center border-0" style="margin-top: 40px; background-color: #0723D7; color: azure" >
           <div class="card-body">
@@ -35,6 +48,7 @@
           </div>
         </div>
     {% endfor %}
+
 
         {% if is_paginated %}
         {% include 'partial/pagination.html' %}

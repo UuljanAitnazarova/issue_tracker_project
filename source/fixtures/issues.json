@@ -23,10 +23,10 @@
     "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum neque et quos sed corporis tenetur dolore saepe numquam asperiores aliquid eum error, voluptatem repellendus, fugit laboriosam magni, atque harum omnis.",
     "status": 3,
     "created_at": "2021-03-10T10:33:35.951Z",
-    "updated_at": "2021-03-22T10:18:53.401Z",
+    "updated_at": "2021-04-01T12:39:03.451Z",
     "project": 1,
     "type": [
-      3
+      1
     ]
   }
 },
@@ -109,21 +109,6 @@
 },
 {
   "model": "tracker.issue",
-  "pk": 32,
-  "fields": {
-    "summary": "Bug 4",
-    "description": "bug 4 444",
-    "status": 3,
-    "created_at": "2021-03-22T10:55:02.808Z",
-    "updated_at": "2021-03-30T13:31:32.905Z",
-    "project": 1,
-    "type": [
-      3
-    ]
-  }
-},
-{
-  "model": "tracker.issue",
   "pk": 38,
   "fields": {
     "summary": "Task 1",
@@ -172,11 +157,11 @@
   "model": "tracker.issue",
   "pk": 41,
   "fields": {
-    "summary": "Coding",
+    "summary": "Codinghjbij",
     "description": "bvh",
     "status": 1,
     "created_at": "2021-03-30T14:11:27.504Z",
-    "updated_at": "2021-03-30T14:11:27.504Z",
+    "updated_at": "2021-04-01T12:25:39.781Z",
     "project": 2,
     "type": [
       3
@@ -185,31 +170,16 @@
 },
 {
   "model": "tracker.issue",
-  "pk": 44,
+  "pk": 49,
   "fields": {
-    "summary": "Task 1",
-    "description": "task 1",
-    "status": 1,
-    "created_at": "2021-04-01T11:18:19.796Z",
-    "updated_at": "2021-04-01T11:18:22.231Z",
-    "project": 6,
+    "summary": "issue 19",
+    "description": "chfgjui",
+    "status": 2,
+    "created_at": "2021-04-01T12:22:41.408Z",
+    "updated_at": "2021-04-01T12:22:41.408Z",
+    "project": 8,
     "type": [
       1
-    ]
-  }
-},
-{
-  "model": "tracker.issue",
-  "pk": 45,
-  "fields": {
-    "summary": "Bug 1",
-    "description": "bud 1",
-    "status": 2,
-    "created_at": "2021-04-01T11:18:36.736Z",
-    "updated_at": "2021-04-01T11:18:36.736Z",
-    "project": 6,
-    "type": [
-      3
     ]
   }
 },
@@ -262,7 +232,13 @@
     "name": "First Project",
     "description": "This is the first project. Good luck!",
     "start_date": "2021-03-29",
-    "end_date": null
+    "end_date": null,
+    "user": [
+      1,
+      17,
+      18,
+      20
+    ]
   }
 },
 {
@@ -272,27 +248,100 @@
     "name": "Project 2",
     "description": "hgvjbk",
     "start_date": "2021-03-29",
-    "end_date": null
+    "end_date": null,
+    "user": [
+      17,
+      18,
+      20
+    ]
   }
 },
 {
   "model": "tracker.project",
-  "pk": 5,
+  "pk": 8,
   "fields": {
-    "name": "Project 3",
-    "description": "fchgvjkl",
-    "start_date": "2021-03-12",
-    "end_date": null
+    "name": "Project 10",
+    "description": "chfgvjkilgfchgjvkl",
+    "start_date": "2021-03-29",
+    "end_date": null,
+    "user": [
+      1,
+      19,
+      20
+    ]
   }
 },
 {
   "model": "tracker.project",
-  "pk": 6,
+  "pk": 9,
   "fields": {
-    "name": "Project 4",
-    "description": "project 4",
+    "name": "hcfgvjbk",
+    "description": "v hgjbk",
     "start_date": "2021-03-08",
-    "end_date": "2021-04-09"
+    "end_date": null,
+    "user": [
+      1
+    ]
+  }
+},
+{
+  "model": "tracker.project",
+  "pk": 10,
+  "fields": {
+    "name": "Jupiter",
+    "description": "ew",
+    "start_date": "2021-03-29",
+    "end_date": null,
+    "user": []
+  }
+},
+{
+  "model": "tracker.project",
+  "pk": 11,
+  "fields": {
+    "name": "Bug",
+    "description": "b vhjnk",
+    "start_date": "2021-03-29",
+    "end_date": null,
+    "user": []
+  }
+},
+{
+  "model": "tracker.project",
+  "pk": 12,
+  "fields": {
+    "name": "dfghjghgh",
+    "description": "bghbjhi",
+    "start_date": "2021-03-29",
+    "end_date": null,
+    "user": [
+      1
+    ]
+  }
+},
+{
+  "model": "tracker.project",
+  "pk": 13,
+  "fields": {
+    "name": "Project 10",
+    "description": "gvhj",
+    "start_date": "2021-03-08",
+    "end_date": null,
+    "user": []
+  }
+},
+{
+  "model": "tracker.project",
+  "pk": 14,
+  "fields": {
+    "name": "test",
+    "description": "hv",
+    "start_date": "2021-03-12",
+    "end_date": null,
+    "user": [
+      1,
+      19
+    ]
   }
 }
 ]

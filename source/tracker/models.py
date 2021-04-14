@@ -35,6 +35,12 @@ class Project(models.Model):
     description = models.TextField(max_length=1000, blank=False, null=False)
     start_date = models.DateField(blank=False, null=False)
     end_date = models.DateField(blank=True, null=True)
+    user = models.ManyToManyField('auth.User', related_name='projects')
 
     def __str__(self):
         return f'{self.pk},{self.description}'
+
+    class Meta:
+        permissions = [
+            ('can_update_users_in_project', 'Can update users in project')
+        ]

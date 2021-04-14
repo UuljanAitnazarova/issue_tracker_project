@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 {% block nav %}
     <li class="nav-item">
-  <a class="nav-link active" aria-current="page" href="{% url 'detail_project' issue.project.pk %}">Go to Project</a>
-</li>
+        <a class="nav-link active" aria-current="page" href="{% url 'detail_project' issue.project.pk %}">Go to Project</a>
+    </li>
 {% endblock %}
 
 
@@ -13,7 +13,14 @@
         <p class="card-text">{{ issue.description }}</p>
           <p class="card-text">Status: {{ issue.status  }}</p>
           <p class="card-text">Types: {% for type in issue.type.all %}{{ type }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
-          <span><a href="{% url 'update_issue' issue.id %}" class="btn btn-primary">Update</a> <a href="{% url 'delete_issue' issue.id %}" class="btn btn-primary">Delete</a></span>
+          <span>
+              {% if perms.tracker.change_issue and request.user in issue.project.user.all %}
+                <a href="{% url 'update_issue' issue.id %}" class="btn btn-primary">Update</a>
+              {% endif %}
+              {% if perms.tracker.delete_issue and request.user in issue.project.user.all %}
+              <a href="{% url 'delete_issue' issue.id %}" class="btn btn-primary">Delete</a>
+              {% endif %}
+          </span>
       </div>
     </div>
 {% endblock content %}

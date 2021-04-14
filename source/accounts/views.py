@@ -16,8 +16,11 @@ class RegisterView(CreateView):
         return redirect(self.get_success_url())
     def get_success_url(self):
         next_url = self.request.GET.get('next')
+        print(next_url, '1')
         if not next_url:
             next_url = self.request.POST.get('next')
+            print(next_url, '2')
         if not next_url:
             next_url = reverse('main_page')
+            print(next_url, '3')
         return next_url

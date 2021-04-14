@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
 
 {% block nav %}
-<li class="nav-item">
-  <a class="nav-link active" aria-current="page" href="{% url 'create_project' %}">Add New Project</a>
-</li>
+    {% if perms.tracker.add_project %}
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'create_project' %}">Add New Project</a>
+        </li>
+    {% endif %}
 {% endblock nav %}
 
 {% block content %}
