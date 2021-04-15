@@ -15,6 +15,11 @@
             <a class="nav-link active" aria-current="page" href="{% url 'create_issue' project.pk %}">Add new issue</a>
         </li>
     {% endif %}
+    {% if perms.tracker.can_update_users_in_project and request.user in project.user.all%}
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'update_users' project.pk %}">Update User List</a>
+        </li>
+    {% endif %}
 
 
 {% endblock nav %}

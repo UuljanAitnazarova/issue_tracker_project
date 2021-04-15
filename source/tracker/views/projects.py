@@ -6,7 +6,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMix
 
 
 from tracker.models import Project, Issue
-from tracker.forms import ProjectForm, ProjectUserForm
+from tracker.forms import ProjectForm
+from accounts.forms import ProjectUserForm
 
 
 class MainView(ListView):

@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.shortcuts import redirect, reverse
 from django.views.generic import CreateView
 
-from tracker.forms import MyUserCreationForm
+from accounts.forms import MyUserCreationForm
 
 
 class RegisterView(CreateView):
