@@ -1,4 +1,4 @@
-from django.contrib.auth.mixins import PermissionRequiredMixin
+from django.contrib.auth.mixins import PermissionRequiredMixin, LoginRequiredMixin
 from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse
 from django.views.generic import ListView, CreateView, DetailView, UpdateView, DeleteView
@@ -8,7 +8,7 @@ from tracker.models import Issue, Status, Type, Project
 from tracker.forms import IssueForm, SearchForm
 
 
-class IndexView(ListView):
+class IndexView(LoginRequiredMixin,ListView):
     template_name = 'issue/index.html'
     model = Issue
     context_object_name = 'issues'
@@ -43,7 +43,7 @@ class IndexView(ListView):
         return context
 
 
-class IssueDetailView(DetailView):
+class IssueDetailView(LoginRequiredMixin, DetailView):
     template_name = 'issue/detail.html'
     model = Issue
     pk_url_kwarg = 'issue_pk'

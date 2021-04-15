@@ -18,7 +18,7 @@ class MainView(ListView):
     paginate_orphans = 1
 
 
-class ProjectIssuesView(ListView):
+class ProjectIssuesView(LoginRequiredMixin, ListView):
     template_name = 'project/detail.html'
     paginate_by = 2
     paginate_orphans = 1
@@ -85,6 +85,6 @@ class ProjectUsersUpdateView(PermissionRequiredMixin, UpdateView):
     def get_success_url(self):
         return reverse('detail_project', kwargs={'project_pk': self.object.pk})
 
-    # def has_permission(self):
-    #     return super().has_permission() and self.request.user in self.get_object().user.all()
+    def has_permission(self):
+        return super().has_permission() and self.request.user in self.get_object().user.all()
 
