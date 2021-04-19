@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Personal Profile {{ user_obj.get_full_name|default:user_obj.username }}</h1>
+    {% if user_obj.profile.avatar %}
+        <img class="avatar" src="{{ user_obj.profile.avatar.url }}" width="250" height="250" alt="user picture">
+    {% endif %}
+    <p>Username: {{ user_obj.username }}</p>
+    <p>First Name: {{ user_obj.first_name }}</p>
+    <p>Surname: {{ user_obj.last_name }}</p>
+    <p>Personal Information: {{ user_obj.profile.info }}</p>
+    <p>Github: {{ user_obj.profile.github }}</p>
+    <p>Email: {{ user_obj.email }}</p>
+    <h2 class="text-center clear">User's projects:</h2>
+    {% include 'partial/project_list.html' %}
+{% endblock %}

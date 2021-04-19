@@ -36,7 +36,7 @@
     <div style="text-align: center">
         <h5>Users</h5>
         {% for user in project.user.all %}
-            <p>{{ user.username }}</p>
+            <p><a href="{% url 'accounts:detail' user.pk %}">{{ user.username }}</a></p>
         {% endfor %}
     </div>
 

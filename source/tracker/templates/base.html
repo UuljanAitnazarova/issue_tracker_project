@@ -21,6 +21,11 @@
               {% if user.is_authenticated %}
                    {% block nav %} {% endblock nav %}
                    <li class="menu-right"><a href="{% url 'accounts:logout' %}?next={{ request.get_full_path }}" class="nav-link">Logout</a></li>
+                   <li class="menu-right">Hi,<a href="{% url 'accounts:detail' user.pk %}">{{ user.username }}</a>!</li>
+                  {% if perms.tracker.users_view %}
+                      <li class="menu-right"><a href="{% url 'accounts:users' %}?next={{ request.get_full_path }}" class="nav-link">All users</a></li>
+                {% endif %}
+
                {% else %}
                    <li class="menu-right"><a href="{% url 'accounts:login' %}?next={{ request.get_full_path }}" class="nav-link">Login</a></li>
                   <li class="menu-right"><a href="{% url 'accounts:registration' %}?next={{ request.get_full_path }}" class="nav-link">Sign Up</a></li>
