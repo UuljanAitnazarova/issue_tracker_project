@@ -112,7 +112,7 @@
   "pk": 38,
   "fields": {
     "summary": "Task 1",
-    "description": "vhjbknlj",
+    "description": "Task 1",
     "status": 2,
     "created_at": "2021-03-30T14:02:38.817Z",
     "updated_at": "2021-03-30T14:02:38.817Z",
@@ -127,7 +127,7 @@
   "pk": 39,
   "fields": {
     "summary": "Bug 2",
-    "description": "vhbjnk",
+    "description": "Bug 2",
     "status": 1,
     "created_at": "2021-03-30T14:04:28.836Z",
     "updated_at": "2021-03-30T14:04:28.836Z",
@@ -142,8 +142,8 @@
   "model": "tracker.issue",
   "pk": 40,
   "fields": {
-    "summary": "ng",
-    "description": "gvuhijo",
+    "summary": "Bug 333",
+    "description": "Bug 333",
     "status": 1,
     "created_at": "2021-03-30T14:07:02.459Z",
     "updated_at": "2021-03-30T14:07:02.459Z",
@@ -157,8 +157,8 @@
   "model": "tracker.issue",
   "pk": 41,
   "fields": {
-    "summary": "Codinghjbij",
-    "description": "bvh",
+    "summary": "Task 22",
+    "description": "Task 22",
     "status": 1,
     "created_at": "2021-03-30T14:11:27.504Z",
     "updated_at": "2021-04-01T12:25:39.781Z",
@@ -173,7 +173,7 @@
   "pk": 49,
   "fields": {
     "summary": "issue 19",
-    "description": "chfgjui",
+    "description": "Issue 19",
     "status": 2,
     "created_at": "2021-04-01T12:22:41.408Z",
     "updated_at": "2021-04-01T12:22:41.408Z",
@@ -246,7 +246,7 @@
   "pk": 2,
   "fields": {
     "name": "Project 2",
-    "description": "hgvjbk",
+    "description": "This is project # 2",
     "start_date": "2021-03-29",
     "end_date": null,
     "user": [
@@ -261,7 +261,7 @@
   "pk": 8,
   "fields": {
     "name": "Project 10",
-    "description": "chfgvjkilgfchgjvkl",
+    "description": "This is project # 10",
     "start_date": "2021-03-29",
     "end_date": null,
     "user": [
@@ -275,8 +275,8 @@
   "model": "tracker.project",
   "pk": 9,
   "fields": {
-    "name": "hcfgvjbk",
-    "description": "v hgjbk",
+    "name": "Project 11",
+    "description": "This is project # 11",
     "start_date": "2021-03-08",
     "end_date": null,
     "user": [
@@ -289,7 +289,7 @@
   "pk": 10,
   "fields": {
     "name": "Jupiter",
-    "description": "ew",
+    "description": "This is project Jupiter",
     "start_date": "2021-03-29",
     "end_date": null,
     "user": []
@@ -299,8 +299,8 @@
   "model": "tracker.project",
   "pk": 11,
   "fields": {
-    "name": "Bug",
-    "description": "b vhjnk",
+    "name": "Anaconda",
+    "description": "This is project Anaconda",
     "start_date": "2021-03-29",
     "end_date": null,
     "user": []
@@ -310,8 +310,8 @@
   "model": "tracker.project",
   "pk": 12,
   "fields": {
-    "name": "dfghjghgh",
-    "description": "bghbjhi",
+    "name": "Project X",
+    "description": "This is project X",
     "start_date": "2021-03-29",
     "end_date": null,
     "user": [
@@ -324,7 +324,7 @@
   "pk": 13,
   "fields": {
     "name": "Project 10",
-    "description": "gvhj",
+    "description": "This is project 10",
     "start_date": "2021-03-08",
     "end_date": null,
     "user": []
@@ -334,8 +334,8 @@
   "model": "tracker.project",
   "pk": 14,
   "fields": {
-    "name": "test",
-    "description": "hv",
+    "name": "Test project",
+    "description": "This is test project",
     "start_date": "2021-03-12",
     "end_date": null,
     "user": [

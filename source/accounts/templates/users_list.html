@@ -1,7 +1,28 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    {% for user in users %}
-        <p>Username: <a href="{% url 'accounts:detail' user.pk %}">{{ user.username }}</a> | Email: {{ user.email }} | Github: {{ user.github }}</p>
-    {% endfor %}
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Username</th>
+              <th scope="col">Email</th>
+              <th scope="col">Name</th>
+                <th scope="col">Github</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for user in users %}
+            <tr>
+              <th scope="row"></th>
+              <td><a href="{% url 'accounts:detail' user.pk %}">{{ user.username }}</a></td>
+              <td>{{ user.email }}</td>
+              <td>{{ user.first_name }} {{ user.last_name }}</td>
+                <td>{{ user.github }}</td>
+            </tr>
+           {% endfor %}
+          </tbody>
+        </table>
+
 {% endblock content %}

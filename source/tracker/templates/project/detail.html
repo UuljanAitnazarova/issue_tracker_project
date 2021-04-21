@@ -26,18 +26,21 @@
 
 
 {% block content %}
-    <div style="text-align: center">
-        <h3>Title: {{ project.name }}</h3>
-        <p>Description: {{ project.description }}</p>
-        <p>Start Date: {{ project.start_date }}</p>
-        <p>End Date: {{ project.end_date }}</p>
-    </div>
+    <div class="row">
+        <div style="text-align: center" class="col-md-10">
+            <h3>{{ project.name }}</h3>
+            <p>{{ project.description }}</p>
+            <span>Start Date: {{ project.start_date }}</span> | <span>End Date: {{ project.end_date }}</span>
+        </div>
 
-    <div style="text-align: center">
-        <h5>Users</h5>
-        {% for user in project.user.all %}
-            <p><a href="{% url 'accounts:detail' user.pk %}">{{ user.username }}</a></p>
-        {% endfor %}
+        <div class="col-md-2">
+            <h5>Users</h5>
+            <ul class="list-group">
+                {% for user in project.user.all %}
+                    <li class="list-group-item "><a href="{% url 'accounts:detail' user.pk %}" style="text-decoration: none">{{ user.username }}</a></li>
+            </ul>
+            {% endfor %}
+        </div>
     </div>
 
 

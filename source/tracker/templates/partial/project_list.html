@@ -8,10 +8,10 @@
       <p>Description: {{ project.description }}</p>
       <p>Start date: ({{ project.start_date }})</p>
       {% if perms.tracker.change_project %}
-     <p><a href="{% url 'update_project' project.pk %}" class="btn btn-primary">Update</a></p>
+     <span><a href="{% url 'update_project' project.pk %}" class="btn btn-secondary">Update</a></span>
       {% endif %}
       {% if perms.tracker.delete_project %}
-       <p><a href="{% url 'delete_project' project.pk %}" class="btn btn-primary">Delete</a></p>
+       <span><a href="{% url 'delete_project' project.pk %}" class="btn btn-secondary">Delete</a></span>
       {% endif %}
   </div>
 </div>
