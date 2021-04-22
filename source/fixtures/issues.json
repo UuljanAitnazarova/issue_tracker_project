@@ -184,6 +184,21 @@
   }
 },
 {
+  "model": "tracker.issue",
+  "pk": 52,
+  "fields": {
+    "summary": "test",
+    "description": "gvhbjk",
+    "status": 2,
+    "created_at": "2021-04-15T09:00:01.667Z",
+    "updated_at": "2021-04-15T09:00:01.667Z",
+    "project": 13,
+    "type": [
+      2
+    ]
+  }
+},
+{
   "model": "tracker.status",
   "pk": 1,
   "fields": {
@@ -342,6 +357,89 @@
       1,
       19
     ]
+  }
+},
+{
+  "model": "tracker.project",
+  "pk": 15,
+  "fields": {
+    "name": "Hello",
+    "description": "hello2",
+    "start_date": "2021-03-29",
+    "end_date": "2021-04-09",
+    "user": [
+      17
+    ]
+  }
+},
+{
+  "model": "accounts.profile",
+  "pk": 1,
+  "fields": {
+    "user": 1,
+    "avatar": "user_pics/beautiful-latin-woman-avatar-character-icon-free-vector.jpg",
+    "info": "HI! I am an admin of this tracker website!",
+    "github": "https://github.com/UuljanAitnazarova"
+  }
+},
+{
+  "model": "accounts.profile",
+  "pk": 2,
+  "fields": {
+    "user": 21,
+    "avatar": "",
+    "info": null,
+    "github": null
+  }
+},
+{
+  "model": "accounts.profile",
+  "pk": 3,
+  "fields": {
+    "user": 17,
+    "avatar": "user_pics/images.png",
+    "info": "Hi! I am Jenny - the best PM!",
+    "github": null
+  }
+},
+{
+  "model": "accounts.profile",
+  "pk": 4,
+  "fields": {
+    "user": 18,
+    "avatar": "user_pics/man5-512.png",
+    "info": "Hey! I am Tom!",
+    "github": null
+  }
+},
+{
+  "model": "accounts.profile",
+  "pk": 5,
+  "fields": {
+    "user": 19,
+    "avatar": "",
+    "info": null,
+    "github": null
+  }
+},
+{
+  "model": "accounts.profile",
+  "pk": 6,
+  "fields": {
+    "user": 20,
+    "avatar": "user_pics/businesswoman-woman-female-icon_24877-11464.jpeg",
+    "info": "I am Jess!",
+    "github": null
+  }
+},
+{
+  "model": "accounts.profile",
+  "pk": 7,
+  "fields": {
+    "user": 22,
+    "avatar": "",
+    "info": null,
+    "github": null
   }
 }
 ]
